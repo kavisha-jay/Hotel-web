@@ -474,7 +474,7 @@ export default function Banner() {
                   initial={{ opacity: 0, x: 50 }}
                   animate={wellnessInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="min-w-[280px] md:min-w-[320px] rounded-2xl overflow-hidden shadow-lg snap-center"
+                  className="min-w-[280px] md:min-w-[320px] aspect-[4/3] rounded-2xl overflow-hidden shadow-lg snap-center"
                 >
                   <motion.img 
                     whileHover={{ scale: 1.1 }}
@@ -571,7 +571,7 @@ export default function Banner() {
                   initial={{ width: 0 }}
                   animate={activitiesInView ? { width: 40 } : { width: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
-                  className="bg-[#b35483]"
+                  className="h-[1px] bg-[#b35483]"
                 ></motion.div>
                 <span className="text-[#b35483] text-[10px] tracking-[0.4em] font-bold uppercase">
                   Discover Lovina
@@ -587,54 +587,54 @@ export default function Banner() {
           </motion.div>
 
           {/* Activity Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-8 lg:gap-6">
-            {activities.map((item, index) => (
-              <motion.div 
-                key={index}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeUp}
-                // Removed item.size to ensure consistent mobile stacking
-                className="group relative overflow-hidden rounded-3xl cursor-pointer w-full"
-              >
-                {/* Image with Zoom effect */}
-                <motion.img 
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.8, ease: "easeOut" }}
-                  src={item.image} 
-                  alt={item.title} 
-                  className="w-full h-full object-cover"
-                />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-8 lg:gap-6">
+          {activities.map((item, index) => (
+            <motion.div 
+              key={index}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeUp}
+              // Removed item.size to ensure consistent mobile stacking
+              className="group relative overflow-hidden rounded-3xl cursor-pointer aspect-[4/5] w-full"
+            >
+              {/* Image with Zoom effect */}
+              <motion.img 
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                src={item.image} 
+                alt={item.title} 
+                className="w-full h-full object-cover"
+              />
+              
+              {/* Gradient Overlay - Slightly darker at bottom to match image_6b4742.jpg */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-90" />
+              
+              {/* Content */}
+              <div className="absolute bottom-0 left-0 p-8 w-full">
+                {/* Category Label - Styled to match pink text in screenshot */}
+                <span className="text-[#e879f9] text-[10px] tracking-[0.3em] font-bold uppercase mb-2 block opacity-90">
+                  {item.category}
+                </span>
                 
-                {/* Gradient Overlay - Slightly darker at bottom to match image_6b4742.jpg */}
-                <div className="absolute inset-0 from-black/70 via-black/10 to-transparent opacity-90" />
+                {/* Title - Serif font as seen in screenshot */}
+                <h3 className="text-white text-2xl md:text-3xl font-serif tracking-wide leading-tight">
+                  {item.title}
+                </h3>
                 
-                {/* Content */}
-                <div className="absolute bottom-0 left-0 p-8 w-full">
-                  {/* Category Label - Styled to match pink text in screenshot */}
-                  <span className="text-[#e879f9] text-[10px] tracking-[0.3em] font-bold uppercase mb-2 block opacity-90">
-                    {item.category}
-                  </span>
-                  
-                  {/* Title - Serif font as seen in screenshot */}
-                  <h3 className="text-white text-2xl md:text-3xl font-serif tracking-wide leading-tight">
-                    {item.title}
-                  </h3>
-                  
-                  {/* Interaction indicator (Optional - matches the 'View Details' logic) */}
-                  <motion.div 
-                    initial={{ opacity: 0, y: 10 }}
-                    whileHover={{ opacity: 1, y: 0 }}
-                    className="mt-4 flex items-center gap-2 text-white/80 text-[10px] tracking-widest uppercase font-semibold"
-                  >
-                    Explore 
-                    <span className="w-8 bg-white/50"></span>
-                  </motion.div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+                {/* Interaction indicator (Optional - matches the 'View Details' logic) */}
+                <motion.div 
+                  initial={{ opacity: 0, y: 10 }}
+                  whileHover={{ opacity: 1, y: 0 }}
+                  className="mt-4 flex items-center gap-2 text-white/80 text-[10px] tracking-widest uppercase font-semibold"
+                >
+                  Explore 
+                  <span className="w-8 h-[1px] bg-white/50"></span>
+                </motion.div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
 
           {/* Call to Action Footer */}
           <motion.div 
@@ -687,7 +687,7 @@ export default function Banner() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={reviewsInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.5, delay: (index % reviews.length) * 0.1 }}
-                className="mx-6 w-[350px] md:w-[450px] bg-white rounded-3xl p-8 shadow-[0_10px_40px_-15px_rgba(44,138,140,0.15)] border border-gray-50 flex flex-col gap-4 whitespace-normal"
+                className="mx-6 w-[350px] md:w-[450px] flex-shrink-0 bg-white rounded-3xl p-8 shadow-[0_10px_40px_-15px_rgba(44,138,140,0.15)] border border-gray-50 flex flex-col gap-4 whitespace-normal"
               >
                 <div>
                   <h3 className="text-xl font-bold text-[#2c8a8c] mb-1">{review.name}</h3>
