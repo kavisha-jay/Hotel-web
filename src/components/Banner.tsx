@@ -153,7 +153,7 @@ export default function Banner() {
           >
             <Image
               src={images[index]}
-              alt="Lovina Beach Hotel"
+              alt="Mirissa Gate Resort"
               fill
               priority
               className="object-cover"
@@ -181,7 +181,7 @@ export default function Banner() {
             transition={{ duration: 1, delay: 0.5 }}
             className="mt-6 uppercase tracking-[0.3em] text-sm opacity-90"
           >
-            With Beachside View of SANDA BEACH
+            With Beachside View of Mirissa Gate Resort
           </motion.p>
         </div>
       </section>
@@ -266,7 +266,7 @@ export default function Banner() {
             </motion.div>
             
             <motion.h2 variants={fadeUp} className="text-5xl font-serif text-[#2c2c2c] leading-tight">
-              Welcome to <br /> Maison D'hotes Sanda Beach
+              Welcome to <br /> Mirissa Gate Resort
             </motion.h2>
             
             <motion.p variants={fadeUp} className="text-gray-600 leading-relaxed text-sm max-w-md">
@@ -337,8 +337,8 @@ export default function Banner() {
                 <path d="M12 3a9 9 0 1 0 9 9 9.75 9.75 0 0 1-9-9Z" />
                 <path d="M4 18c2-2 4-2 6 0s4 2 6 0 2-2 2-2" strokeLinecap="round" />
               </motion.svg>
-              <motion.h3 variants={fadeUp} className="text-2xl font-serif tracking-widest uppercase">Sanda Beach</motion.h3>
-              <motion.p variants={fadeUp} className="text-[10px] tracking-[0.4em] uppercase opacity-80">Maison D'hotes</motion.p>
+              <motion.h3 variants={fadeUp} className="text-2xl font-serif tracking-widest uppercase">Mirissa</motion.h3>
+              <motion.p variants={fadeUp} className="text-[10px] tracking-[0.4em] uppercase opacity-80">Gate Resort</motion.p>
             </motion.div>
 
             <motion.p 

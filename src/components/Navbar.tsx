@@ -67,10 +67,10 @@ export default function Navbar() {
             
             <div className="text-center">
               <p className="text-[10px] tracking-[0.4em] font-light uppercase opacity-80 mb-1">
-                Maison D'hotes
+              Mirissa
               </p>
               <h1 className="text-4xl font-serif tracking-[0.15em] leading-tight">
-                SANDA BEACH
+               Gate Resort
               </h1>
             </div>
           </Link>
