@@ -278,7 +278,7 @@ export default function Banner() {
             </motion.h2>
             
             <motion.p variants={fadeUp} className="text-gray-600 leading-relaxed text-sm max-w-md">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Waking up to the rhythmic song of the Indian Ocean, our hotel offers a front-row seat to nature’s most breathtaking theater. Each room is designed with expansive, floor-to-ceiling glass doors that lead to private terraces, ensuring that the turquoise waters and golden sands are the first thing you see every morning.
             </motion.p>
             <Link href="/about">
               <motion.button 
@@ -355,7 +355,11 @@ export default function Banner() {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="text-xs leading-relaxed opacity-90 font-light"
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
+            Panoramic Vistas: Uninterrupted views of the coastline from every vantage point.
+
+Seamless Indoor-Outdoor Living: Large balconies that act as an extension of your living space.
+
+Nature's Soundtrack: The soothing sound of waves providing a natural white-noise for relaxation.
             </motion.p>
           </motion.div>
         </section>
