@@ -10,7 +10,7 @@ export default function AboutPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className=" from-[#2c8a8c] to-[#1f6667] text-white py-20 mt-15">
+      <section className="bg-gradient-to-b from-[#2c8a8c] to-[#1f6667] text-white py-20 mt-15">
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-5xl md:text-6xl font-serif tracking-wide mb-4">
             Maison D'hotes Sanda Beach
