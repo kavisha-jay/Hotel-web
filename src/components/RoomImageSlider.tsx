@@ -25,7 +25,7 @@ export default function RoomImageSlider({ images }: Props) {
       {/* Left Arrow */}
       <button
         onClick={prev}
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 rounded-full w-10 h-10 flex items-center justify-center text-xl"
+        className="absolute left-4 top-1/2 -translate-y-1/2 bg-gray-600 rounded-full w-10 h-10 flex items-center justify-center text-xl"
       >
         ‹
       </button>
@@ -33,7 +33,7 @@ export default function RoomImageSlider({ images }: Props) {
       {/* Right Arrow */}
       <button
         onClick={next}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 rounded-full w-10 h-10 flex items-center justify-center text-xl"
+        className="absolute right-4 top-1/2 -translate-y-1/2 bg-gray-600 rounded-full w-10 h-10 flex items-center justify-center text-xl"
       >
         ›
       </button>

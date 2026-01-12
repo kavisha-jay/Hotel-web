@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import { MapPin, Utensils, Waves, Train, Plane, Wifi, Car, UtensilsCrossed, Coffee, Bed, Ban, Clock, CreditCard } from 'lucide-react';
+import Link from 'next/link';
 
 export default function AboutPage() {
   return (
@@ -9,7 +10,7 @@ export default function AboutPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-[#2c8a8c] to-[#1f6667] text-white py-20 mt-20">
+      <section className="bg-gradient-to-b from-[#2c8a8c] to-[#1f6667] text-white py-20 mt-15">
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-5xl md:text-6xl font-serif tracking-wide mb-4">
             Maison D'hotes Sanda Beach
@@ -145,11 +146,13 @@ export default function AboutPage() {
                 </div>
               </div>
             </div>
-
+            
             <div className="text-center">
+            <Link href='https://www.booking.com/hotel/lk/mason-d-39-hotes.en-gb.html?aid=356938&label=metagha-link-MRLK-hotel-1699983_dev-desktop_los-1_bw-80_dow-Thursday_defdate-1_room-0_gstadt-2_rateid-0_aud-0_gacid-21411118307_mcid-10_ppa-0_clrid-0_ad-1_gstkid-0_checkin-20260402_ppt-_lp-2144_r-292276354203781676&sid=6b687e80c593544d813a512fc038be60&all_sr_blocks=169998305_244238269_2_1_0&checkin=2026-04-02&checkout=2026-04-03&dest_id=1699983&dest_type=hotel&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=169998305_244238269_2_1_0&hpos=1&matching_block_id=169998305_244238269_2_1_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=169998305_244238269_2_1_0__7000&srepoch=1768188007&srpvid=4adf90d9eab4045b3b32f3366ad5cb76&type=total&ucfs=1&'>
               <button className="bg-[#2c8a8c] text-white px-8 py-3 rounded-full text-sm font-bold tracking-widest uppercase hover:bg-[#1f6667] transition-all shadow-lg cursor-pointer">
                 See Availability
               </button>
+            </Link>
             </div>
           </div>
         </section>
@@ -182,9 +185,11 @@ export default function AboutPage() {
             </div>
 
             <div className="text-center">
+            <Link href='https://www.booking.com/hotel/lk/mason-d-39-hotes.en-gb.html?aid=356938&label=metagha-link-MRLK-hotel-1699983_dev-desktop_los-1_bw-80_dow-Thursday_defdate-1_room-0_gstadt-2_rateid-0_aud-0_gacid-21411118307_mcid-10_ppa-0_clrid-0_ad-1_gstkid-0_checkin-20260402_ppt-_lp-2144_r-292276354203781676&sid=6b687e80c593544d813a512fc038be60&all_sr_blocks=169998305_244238269_2_1_0&checkin=2026-04-02&checkout=2026-04-03&dest_id=1699983&dest_type=hotel&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=169998305_244238269_2_1_0&hpos=1&matching_block_id=169998305_244238269_2_1_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=169998305_244238269_2_1_0__7000&srepoch=1768188007&srpvid=4adf90d9eab4045b3b32f3366ad5cb76&type=total&ucfs=1&'>
               <button className="bg-[#2c8a8c] text-white px-8 py-3 rounded-full text-sm font-bold tracking-widest uppercase hover:bg-[#1f6667] transition-all shadow-lg cursor-pointer">
                 See Availability
               </button>
+            </Link>  
             </div>
           </div>
         </section>
@@ -277,9 +282,11 @@ export default function AboutPage() {
             </div>
 
             <div className="text-center mt-8">
-              <button className="bg-[#2c8a8c] text-white px-8 py-3 rounded-full text-sm font-bold tracking-widest uppercase hover:bg-[#1f6667] transition-all shadow-lg cursor-pointer">
-                See Availability
-              </button>
+              <Link href='https://www.booking.com/hotel/lk/mason-d-39-hotes.en-gb.html?aid=356938&label=metagha-link-MRLK-hotel-1699983_dev-desktop_los-1_bw-80_dow-Thursday_defdate-1_room-0_gstadt-2_rateid-0_aud-0_gacid-21411118307_mcid-10_ppa-0_clrid-0_ad-1_gstkid-0_checkin-20260402_ppt-_lp-2144_r-292276354203781676&sid=6b687e80c593544d813a512fc038be60&all_sr_blocks=169998305_244238269_2_1_0&checkin=2026-04-02&checkout=2026-04-03&dest_id=1699983&dest_type=hotel&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=169998305_244238269_2_1_0&hpos=1&matching_block_id=169998305_244238269_2_1_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=169998305_244238269_2_1_0__7000&srepoch=1768188007&srpvid=4adf90d9eab4045b3b32f3366ad5cb76&type=total&ucfs=1&'>
+                <button className="bg-[#2c8a8c] text-white px-8 py-3 rounded-full text-sm font-bold tracking-widest uppercase hover:bg-[#1f6667] transition-all shadow-lg cursor-pointer">
+                  See Availability
+                </button>
+              </Link>
             </div>
           </div>
         </section>

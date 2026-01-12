@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 type Props = {
     room: any
   }
@@ -8,7 +10,7 @@ type Props = {
   
         {/* Title */}
         <div>
-          <h1 className="text-3xl font-semibold text-[#0b3558]">
+          <h1 className="text-3xl font-semibold text-[#2c8a8c]">
             {room.name}
           </h1>
           <p className="text-gray-600 mt-1">
@@ -60,7 +62,7 @@ type Props = {
           <summary className="cursor-pointer font-medium text-black">
             Room Facilities
           </summary>
-          <ul className="mt-2 text-sm text-gray-600 list-disc pl-5 space-y-1 text-black">
+          <ul className="mt-2 text-sm list-disc pl-5 space-y-1 text-black">
             {room.amenities.map((item: string) => (
               <li key={item}>{item}</li>
             ))}
@@ -75,7 +77,7 @@ type Props = {
               className="border rounded-xl p-4 bg-white flex justify-between items-center"
             >
               <div>
-                <p className="font-medium">
+                <p className="font-medium text-black">
                   Max persons: {option.maxPersons}
                 </p>
                 <p className="text-sm text-gray-500">
@@ -86,9 +88,9 @@ type Props = {
                 </p>
               </div>
   
-              <button className="bg-[#2c8a8c] text-white px-4 py-2 rounded-lg text-sm">
+              {/* <button className="bg-[#2c8a8c] text-white px-4 py-2 rounded-lg text-sm">
                 Select
-              </button>
+              </button> */}
             </div>
           ))}
         </div>
@@ -99,9 +101,11 @@ type Props = {
         </p>
   
         {/* CTA */}
-        <button className="bg-[#b35483] text-white px-8 py-3 rounded-full font-medium hover:opacity-90">
-          Reserve now
-        </button>
+        <Link href='https://www.booking.com/hotel/lk/mason-d-39-hotes.en-gb.html?aid=356938&label=metagha-link-MRLK-hotel-1699983_dev-desktop_los-1_bw-80_dow-Thursday_defdate-1_room-0_gstadt-2_rateid-0_aud-0_gacid-21411118307_mcid-10_ppa-0_clrid-0_ad-1_gstkid-0_checkin-20260402_ppt-_lp-2144_r-292276354203781676&sid=6b687e80c593544d813a512fc038be60&all_sr_blocks=169998305_244238269_2_1_0&checkin=2026-04-02&checkout=2026-04-03&dest_id=1699983&dest_type=hotel&dist=0&group_adults=2&group_children=0&hapos=1&highlighted_blocks=169998305_244238269_2_1_0&hpos=1&matching_block_id=169998305_244238269_2_1_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=169998305_244238269_2_1_0__7000&srepoch=1768188007&srpvid=4adf90d9eab4045b3b32f3366ad5cb76&type=total&ucfs=1&'>
+          <button className="bg-[#b35483] text-white px-8 py-3 rounded-full font-medium hover:opacity-90">
+            Reserve now
+          </button>
+        </Link>
   
       </div>
     )

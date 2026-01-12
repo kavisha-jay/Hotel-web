@@ -6,6 +6,7 @@ import Image from 'next/image'
 import p1 from '../assests/p1.jpg'
 import p2 from '../assests/p2.jpg'
 import p3 from '../assests/p3.jpg'
+import Link from 'next/link'
 
 const images = [p1, p2, p3]
 
@@ -271,15 +272,16 @@ export default function Banner() {
             <motion.p variants={fadeUp} className="text-gray-600 leading-relaxed text-sm max-w-md">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </motion.p>
-            
-            <motion.button 
-              variants={fadeUp}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-[#b35483] text-white px-10 py-3 rounded-full text-xs font-bold tracking-widest uppercase hover:bg-[#96426a] transition-colors shadow-lg shadow-pink-200"
-            >
-              Read More
-            </motion.button>
+            <Link href="/about">
+              <motion.button 
+                variants={fadeUp}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-[#b35483] text-white px-10 py-3 rounded-full text-xs font-bold tracking-widest uppercase hover:bg-[#96426a] transition-colors shadow-lg shadow-pink-200"
+              >
+                Read More
+              </motion.button>
+            </Link>
           </motion.div>
         </section>
 
@@ -393,15 +395,17 @@ export default function Banner() {
             </motion.p>
             
             {/* Button */}
-            <motion.button 
-              variants={fadeUp}
-              whileHover={{ scale: 1.05, x: 5 }}
-              whileTap={{ scale: 0.95 }}
-              className="group bg-[#b35483] text-white px-8 py-4 rounded-full text-sm font-bold tracking-widest uppercase hover:bg-[#96426a] transition-all shadow-lg shadow-pink-200/50 flex items-center gap-3"
-            >
-              Explore Our Rooms
-              <span className="group-hover:translate-x-1 transition-transform">→</span>
-            </motion.button>
+            <Link href='/rooms'>
+              <motion.button 
+                variants={fadeUp}
+                whileHover={{ scale: 1.05, x: 5 }}
+                whileTap={{ scale: 0.95 }}
+                className="group bg-[#b35483] text-white px-8 py-4 rounded-full text-sm font-bold tracking-widest uppercase hover:bg-[#96426a] transition-all shadow-lg shadow-pink-200/50 flex items-center gap-3"
+              >
+                Explore Our Rooms
+                <span className="group-hover:translate-x-1 transition-transform">→</span>
+              </motion.button>
+            </Link>
           </motion.div>
 
           {/* Right Column: 3-Image Pop Transition Stack */}
@@ -583,44 +587,50 @@ export default function Banner() {
           </motion.div>
 
           {/* Activity Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[250px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-8 lg:gap-6">
             {activities.map((item, index) => (
               <motion.div 
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                animate={activitiesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
-                whileHover={{ y: -10 }}
-                className={`group relative overflow-hidden rounded-2xl cursor-pointer ${item.size}`}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeUp}
+                // Removed item.size to ensure consistent mobile stacking
+                className="group relative overflow-hidden rounded-3xl cursor-pointer aspect-[4/5] w-full"
               >
                 {/* Image with Zoom effect */}
                 <motion.img 
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ duration: 0.7 }}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
                   src={item.image} 
                   alt={item.title} 
                   className="w-full h-full object-cover"
                 />
                 
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                {/* Gradient Overlay - Slightly darker at bottom to match image_6b4742.jpg */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-90" />
                 
                 {/* Content */}
-                <div className="absolute bottom-0 left-0 p-8 w-full translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                  <span className="text-[#b35483] text-[9px] tracking-[0.3em] font-bold uppercase mb-2 block">
+                <div className="absolute bottom-0 left-0 p-8 w-full">
+                  {/* Category Label - Styled to match pink text in screenshot */}
+                  <span className="text-[#e879f9] text-[10px] tracking-[0.3em] font-bold uppercase mb-2 block opacity-90">
                     {item.category}
                   </span>
-                  <h3 className="text-white text-xl font-serif tracking-wide mb-4">
+                  
+                  {/* Title - Serif font as seen in screenshot */}
+                  <h3 className="text-white text-2xl md:text-3xl font-serif tracking-wide leading-tight">
                     {item.title}
                   </h3>
                   
-                  {/* Hidden Button that slides up */}
-                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <button className="flex items-center gap-2 text-white text-[10px] tracking-[0.2em] uppercase font-bold">
-                      View Details 
-                      <span className="w-6 h-[1px] bg-white"></span>
-                    </button>
-                  </div>
+                  {/* Interaction indicator (Optional - matches the 'View Details' logic) */}
+                  <motion.div 
+                    initial={{ opacity: 0, y: 10 }}
+                    whileHover={{ opacity: 1, y: 0 }}
+                    className="mt-4 flex items-center gap-2 text-white/80 text-[10px] tracking-widest uppercase font-semibold"
+                  >
+                    Explore 
+                    <span className="w-8 h-[1px] bg-white/50"></span>
+                  </motion.div>
                 </div>
               </motion.div>
             ))}
@@ -633,6 +643,7 @@ export default function Banner() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="mt-16 flex justify-center"
           >
+          <Link href="/about">
             <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -643,6 +654,7 @@ export default function Banner() {
                 <path d="M5 12h14m-7-7 7 7-7 7" />
               </svg>
             </motion.button>
+          </Link>
           </motion.div>
           
         </div>

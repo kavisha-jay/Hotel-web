@@ -9,7 +9,7 @@ export default function Page() {
   return (
     <>
     <Navbar/>
-    <main className="min-h-screen bg-white pt-20 ">
+    <main className="min-h-screen bg-white pt-15 ">
       {/* Hero Header - Matching the brand's elegant aesthetic */}
       <section className="relative h-[40vh] bg-[#2c8a8c] flex items-center justify-center text-center px-6">
         <div className="absolute inset-0 opacity-20">
