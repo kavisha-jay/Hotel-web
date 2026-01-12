@@ -25,10 +25,10 @@ export default function Footer() {
               
               <div className="text-center">
                 <p className="text-[10px] tracking-[0.4em] font-light uppercase opacity-80 mb-1">
-                  Maison D'hotes
+                   Mirissa
                 </p>
                 <h1 className="text-4xl font-serif tracking-[0.15em] leading-tight">
-                  SANDA BEACH
+                Gate Resort
                 </h1>
               </div>
             </div>
@@ -67,16 +67,17 @@ export default function Footer() {
 
           {/* Section 3: Google Maps Frame */}
           <div className="lg:col-span-5 h-[300px] w-full rounded-2xl overflow-hidden border border-teal-400/20 shadow-2xl">
-            <iframe 
-                title="Maison D'hotes Sanda Beach Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63433.19315820733!2d80.45143644589857!3d5.937132262886182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae13e329ed7518b%3A0x339018591e289ba6!2sMaison%20D%27hotes%20Sanda%20Beach!5e0!3m2!1sen!2slk!4v1704900000000!5m2!1sen!2slk"
-                className="w-full h-full"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
-            </div>
+  <iframe
+    title="Mirissa Gate Resort Location"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.6057791592826!2d80.4713269!3d5.938176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae13e3683f4823b%3A0x9cd8ea44a32f7cd4!2sMirissa%20Gate%20Resort!5e0!3m2!1sen!2slk!4v1704900000000"
+    className="w-full h-full"
+    style={{ border: 0 }}
+    allowFullScreen
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+  />
+</div>
+
 
         </div>
 

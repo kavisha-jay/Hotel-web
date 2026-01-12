@@ -6,6 +6,14 @@ import Image from 'next/image'
 import p1 from '../assests/p1.jpg'
 import p2 from '../assests/p2.jpg'
 import p3 from '../assests/p3.jpg'
+
+import p8 from '../assests/p8.jpg'
+import p9 from '../assests/p9.jpg'
+import p10 from '../assests/p10.jpg'
+import p11 from '../assests/p11.jpg'
+import p13 from '../assests/p13.jpg'
+import p14 from '../assests/p14.jpg'
+import p15 from '../assests/p15.jpg'
 import Link from 'next/link'
 
 const images = [p1, p2, p3]
@@ -24,26 +32,26 @@ export default function Banner() {
 
   // Placeholder images for hotel rooms - replace with actual assets
   const roomImages = [
-    "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=800", // Room 1
-    "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&q=80&w=800", // Room 2
-    "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&q=80&w=800"  // Room 3
+    p13, // Room 1
+    p14, // Room 2
+    p15  // Room 3
   ];
 
   const wellnessImages = [
     {
-      url: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80&w=800",
+      url: p9,
       title: "Traditional Massage"
     },
     {
-      url: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=800",
+      url: p11,
       title: "Sunrise Yoga"
     },
     {
-      url: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&q=80&w=800",
+      url: p8,
       title: "Essential Oils"
     },
     {
-      url: "https://images.unsplash.com/photo-1599447421416-3414500d18a5?auto=format&fit=crop&q=80&w=800",
+      url: p10,
       title: "Meditation Space"
     }
   ];
@@ -390,8 +398,14 @@ export default function Banner() {
               </motion.span>
             </motion.h2>
             
-            <motion.p variants={fadeUp} className="text-gray-600 text-lg leading-relaxed max-w-md font-light">
-              Our rooms are designed to blend comfort, privacy, and breathtaking ocean views. Experience the ultimate relaxation in our carefully curated spaces.
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={activeIndex !== undefined ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="text-gray-600 font-light leading-relaxed max-w-md text-base mt-3"
+            >
+              Our rooms are designed to blend comfort, privacy, and breathtaking ocean views. 
+              Experience the ultimate relaxation in our carefully curated spaces.
             </motion.p>
             
             {/* Button */}
@@ -435,7 +449,7 @@ export default function Banner() {
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                   className={`absolute w-4/5 h-4/5 rounded-3xl overflow-hidden border-4 border-white transition-all duration-700 ease-in-out will-change-transform ${positionClass}`}
                 >
-                  <img 
+                  <Image
                     src={img} 
                     alt={`Room view ${index + 1}`} 
                     className="w-full h-full object-cover"
@@ -448,111 +462,135 @@ export default function Banner() {
       </section>
 
       {/* SECTION 4: Wellness Section */}
-      <section ref={wellnessRef} className="bg-[#fcfaf7] py-20 px-6">
-        <div className="max-w-7xl mx-auto text-center">
-          {/* Header Section */}
-          <motion.div 
-            initial="hidden"
-            animate={wellnessInView ? "visible" : "hidden"}
-            variants={fadeUp}
-            className="mb-12"
-          >
-            <p className="text-[#c5a35d] text-[10px] tracking-[0.4em] font-bold uppercase mb-2">
-              Wellness & Rejuvenation
-            </p>
-            <h2 className="text-4xl font-serif text-[#2c8a8c] tracking-tight">
-              Holistic Spa & Yoga Sanctuary
-            </h2>
-          </motion.div>
+      {/* SECTION 4: Rooftop Pool & Experiences */}
+<section ref={wellnessRef} className="bg-[#fcfaf7] py-20 px-6">
+  <div className="max-w-7xl mx-auto text-center">
 
-          {/* Image Gallery */}
-          <div className="relative group">
-            <div className="flex gap-4 overflow-x-auto pb-8 snap-x no-scrollbar">
-              {wellnessImages.map((item, index) => (
-                <motion.div 
-                  key={index}
-                  initial={{ opacity: 0, x: 50 }}
-                  animate={wellnessInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="min-w-[280px] md:min-w-[320px] aspect-[4/3] rounded-2xl overflow-hidden shadow-lg snap-center"
-                >
-                  <motion.img 
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.7 }}
-                    src={item.url} 
-                    alt={item.title} 
-                    className="w-full h-full object-cover" 
-                  />
-                </motion.div>
-              ))}
-            </div>
+    {/* Header */}
+    <motion.div
+      initial="hidden"
+      animate={wellnessInView ? "visible" : "hidden"}
+      variants={fadeUp}
+      className="mb-12"
+    >
+      <p className="text-[#c5a35d] text-[10px] tracking-[0.4em] font-bold uppercase mb-2">
+        Leisure & Experiences
+      </p>
+      <h2 className="text-4xl font-serif text-[#2c8a8c] tracking-tight">
+        Rooftop Pool & Coastal Adventures
+      </h2>
+    </motion.div>
 
-            {/* Custom Scrollbar UI */}
-            <motion.div 
-              initial={{ width: 0 }}
-              animate={wellnessInView ? { width: "100%" } : { width: 0 }}
-              transition={{ duration: 1, delay: 0.8 }}
-              className="flex items-center justify-center gap-4 mt-2"
-            >
-              <span className="text-gray-400 text-xs">◀</span>
-              <div className="w-full max-w-xl h-[3px] bg-gray-200 rounded-full relative">
-                <div className="absolute top-0 left-0 w-1/4 h-full bg-gray-400 rounded-full"></div>
-              </div>
-              <span className="text-gray-400 text-xs">▶</span>
-            </motion.div>
-          </div>
+    {/* Image Gallery */}
+    <div className="relative w-full h-full">
+      <div className="flex gap-4 overflow-x-auto pb-8 snap-x no-scrollbar">
+        {wellnessImages.map((item, index) => (
+    <motion.div
+      key={index}
+      initial={{ opacity: 0, x: 50 }}
+      animate={wellnessInView ? { opacity: 1, x: 0 } : {}}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+      className="
+        relative
+        min-w-[280px] md:min-w-[320px]
+        aspect-[4/3]
+        rounded-2xl
+        overflow-hidden
+        shadow-lg
+        snap-center
+      "
+    >
+      <Image
+        src={item.url}
+        alt={item.title}
+        fill
+        className="object-cover"
+        sizes="(max-width: 768px) 100vw, 320px"
+      />
+    </motion.div>
+  ))}
+      </div>
 
-          {/* Description Text */}
-          <motion.div 
-            initial="hidden"
-            animate={wellnessInView ? "visible" : "hidden"}
-            variants={fadeUp}
-            className="mt-12 max-w-3xl mx-auto"
-          >
-            <p className="text-gray-600 text-sm leading-relaxed font-light">
-              Reconnect your body and soul in our beachside sanctuary. From traditional Balinese massages using organic 
-              essential oils to sunrise yoga sessions overlooking the ocean, our wellness programs are designed to 
-              help you find your inner peace in a comfortable, serene environment.
-            </p>
-          </motion.div>
-
-          {/* Feature List */}
-          <motion.div 
-            initial="hidden"
-            animate={wellnessInView ? "visible" : "hidden"}
-            variants={stagger}
-            className="mt-10 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12"
-          >
-            <motion.div variants={fadeUp} className="flex items-center gap-3">
-              <motion.div 
-                whileHover={{ rotate: 180 }}
-                transition={{ duration: 0.5 }}
-                className="text-[#b35483]"
-              >
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M12 3c-1.5 5-6 6-6 10s3 5 6 5 6-1 6-5-4.5-5-6-10Z" />
-                  <path d="M12 21c-3 0-6-2-6-5s3-4 6-4 6 1 6 4-3 5-6 5Z" opacity="0.5" />
-                </svg>
-              </motion.div>
-              <span className="text-[#2c8a8c] font-medium text-sm tracking-wide">Professional Balinese Therapists</span>
-            </motion.div>
-
-            <motion.div variants={fadeUp} className="flex items-center gap-3">
-              <motion.div 
-                whileHover={{ rotate: 360 }}
-                transition={{ duration: 0.8 }}
-                className="text-[#b35483]"
-              >
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <circle cx="12" cy="12" r="4" />
-                  <path d="m4.93 4.93 1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41M12 2v2M12 20v2" />
-                </svg>
-              </motion.div>
-              <span className="text-[#2c8a8c] font-medium text-sm tracking-wide">Daily Sunrise & Sunset Yoga</span>
-            </motion.div>
-          </motion.div>
+      {/* Minimal Scroll Indicator */}
+      <motion.div
+        initial={{ width: 0 }}
+        animate={wellnessInView ? { width: "100%" } : {}}
+        transition={{ duration: 1, delay: 0.8 }}
+        className="flex items-center justify-center gap-4 mt-2"
+      >
+        <span className="text-gray-400 text-xs">◀</span>
+        <div className="w-full max-w-xl h-[3px] bg-gray-200 rounded-full relative">
+          <div className="absolute top-0 left-0 w-1/4 h-full bg-gray-400 rounded-full"></div>
         </div>
-      </section>
+        <span className="text-gray-400 text-xs">▶</span>
+      </motion.div>
+    </div>
+
+    {/* Description */}
+    <motion.div
+      initial="hidden"
+      animate={wellnessInView ? "visible" : "hidden"}
+      variants={fadeUp}
+      className="mt-12 max-w-3xl mx-auto"
+    >
+      <p className="text-gray-600 text-sm leading-relaxed font-light">
+        Enjoy breathtaking ocean views from our rooftop infinity pool, unwind on sun loungers,
+        or explore the coastal lifestyle with curated activities. From peaceful poolside mornings
+        to vibrant evenings with live music, every moment is designed for relaxed seaside living.
+      </p>
+    </motion.div>
+
+    {/* Feature Highlights */}
+    <motion.div
+      initial="hidden"
+      animate={wellnessInView ? "visible" : "hidden"}
+      variants={stagger}
+      className="mt-12 flex flex-col md:flex-row items-center justify-center gap-10"
+    >
+
+      {/* Rooftop Pool */}
+      <motion.div variants={fadeUp} className="flex items-center gap-3">
+        <div className="text-[#b35483]">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M2 18c1.5 1 4.5 1 6 0s4.5-1 6 0 4.5 1 6 0" />
+            <path d="M2 14c1.5 1 4.5 1 6 0s4.5-1 6 0 4.5 1 6 0" />
+          </svg>
+        </div>
+        <span className="text-[#2c8a8c] font-medium text-sm tracking-wide">
+          Rooftop Infinity Pool
+        </span>
+      </motion.div>
+
+      {/* Sun Loungers */}
+      <motion.div variants={fadeUp} className="flex items-center gap-3">
+        <div className="text-[#b35483]">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M3 18h18" />
+            <path d="M7 18V8l10 6v4" />
+          </svg>
+        </div>
+        <span className="text-[#2c8a8c] font-medium text-sm tracking-wide">
+          Sun Loungers & Poolside Relaxation
+        </span>
+      </motion.div>
+
+      {/* Activities */}
+      <motion.div variants={fadeUp} className="flex items-center gap-3">
+        <div className="text-[#b35483]">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <circle cx="12" cy="12" r="3" />
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.6 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 8a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 8 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 8c.36.63.49 1.36.33 2.09" />
+          </svg>
+        </div>
+        <span className="text-[#2c8a8c] font-medium text-sm tracking-wide">
+          Coastal Activities & Live Music
+        </span>
+      </motion.div>
+
+    </motion.div>
+  </div>
+</section>
+
 
       {/* SECTION 5: Activities Section */}
       <section ref={activitiesRef} className="bg-[#fdfdfd] py-24 px-6 md:px-12 lg:px-24">

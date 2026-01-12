@@ -1,3 +1,13 @@
+import p13 from '../assests/p13.jpg'
+import p14 from '../assests/p14.jpg'
+import p15 from '../assests/p15.jpg'
+
+const roomImages = [
+  p13, // Room 1
+  p14, // Room 2
+  p15  // Room 3
+];
+
 export const rooms = [
   {
     id: 1,

@@ -31,9 +31,9 @@ export default function Page() {
           {/* Left Column: Contact Information */}
           <div className="space-y-12">
             <div>
-              <h2 className="text-3xl font-serif text-[#2c8a8c] mb-6">Reach Out to Sanda Beach</h2>
+              <h2 className="text-3xl font-serif text-[#2c8a8c] mb-6">Reach Out to Resort</h2>
               <p className="text-gray-500 font-light leading-relaxed">
-                Whether you're planning a romantic getaway or a family retreat, our team is here to ensure your stay at Maison D'hotes is perfect. We typically respond to inquiries within 24 hours.
+                Whether you're planning a romantic getaway or a family retreat, our team is here to ensure your stay at Mirissa Gate Resort is perfect. We typically respond to inquiries within 24 hours.
               </p>
             </div>
 
@@ -56,7 +56,7 @@ export default function Page() {
                 </div>
                 <div>
                   <h4 className="text-xs font-bold tracking-widest uppercase text-gray-400 mb-1">Email Us</h4>
-                  <p className="text-lg text-[#2c8a8c]">hello@sandabeachbali.com</p>
+                  <p className="text-lg text-[#2c8a8c]">hello@mirissagatemirissal.com</p>
                 </div>
               </div>
 
