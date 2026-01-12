@@ -84,7 +84,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-20 pt-8 border-t border-teal-400/20 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-[10px] tracking-widest uppercase opacity-60">
-            © 2026 Lovina Beach Hotel. All Rights Reserved.
+            © 2026 Mirissa Gate Resort Beach Hotel. All Rights Reserved.
           </p>
           <div className="flex gap-8 text-[10px] tracking-widest uppercase font-bold text-[#b35483]">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
